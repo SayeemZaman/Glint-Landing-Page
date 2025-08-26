@@ -16,7 +16,9 @@ function Btn({ name, target }) {
 export default function Hero() {
   return (
     <section id="home" className="bg-rich-black">
-      <h1 className="font-satoshiBold text-4xl text-white">Glint.</h1>
+      <h1 className="font-satoshiBold text-4xl text-white text-start">
+        Glint.
+      </h1>
       <div className="py-[64px]">
         <h2 className="text-white text-center text-xl text-slate-gray font-satoshiBold">
           Welcome to glint
