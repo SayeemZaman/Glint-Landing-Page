@@ -22,3 +22,7 @@
   font-family: "satoshi-reg";
   src: url("/src/assets/fonts/Satoshi-Black.otf");
 }
+
+section {
+  @apply px-[24px] py-[32px];
+}
