@@ -15,6 +15,13 @@ export default {
         jet: "#1a1a1a",
         "eerie-black": "#151515",
       },
+      fontFamily: {
+        satoshiLight: ["satoshi-light", "sans-serif"],
+        satoshiReg: ["satoshi-reg", "sans-serif"],
+        satoshiMed: ["satoshi-med", "sans-serif"],
+        satoshiBold: ["satoshi-bold", "sans-serif"],
+        satoshiBlack: ["satoshi-black", "sans-serif"],
+      },
     },
   },
   plugins: [],
