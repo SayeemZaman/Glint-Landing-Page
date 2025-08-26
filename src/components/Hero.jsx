@@ -20,13 +20,11 @@ export default function Hero() {
         Glint.
       </h1>
       <div className="py-[64px]">
-        <h2 className="text-white text-center text-xl text-slate-gray font-satoshiBold">
-          Welcome to glint
-        </h2>
-        <p className="text-white text-center text-3xl font-satoshiBold my-[8px] mb-[32px]">
+        <h2 className="text-white text-slate-gray">WELCOME TO GLINT</h2>
+        <h3 className="text-white mb-[32px]">
           We are a creative group of people who design influential brands and
           digital experiences.
-        </p>
+        </h3>
         <Btn name="Start A Project" target="#about" />
         <Btn name="More About Us" target="#contact" />
       </div>

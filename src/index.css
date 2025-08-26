@@ -27,8 +27,13 @@ section {
   @apply px-[24px] py-[32px];
 }
 p,
-h1,
 h2,
 h3 {
   @apply text-center;
+}
+h2 {
+  @apply font-satoshiBold text-base;
+}
+h3 {
+  @apply font-satoshiBold text-3xl my-[12px];
 }
