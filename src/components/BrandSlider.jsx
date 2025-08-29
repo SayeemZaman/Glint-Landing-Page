@@ -1,4 +1,5 @@
 import { useSlider } from "../hooks/useSlider";
+import Indicator from "./Indicator";
 import apple from "../assets/images/apple.png.webp";
 import atom from "../assets/images/atom.png.webp";
 import blackberry from "../assets/images/blackberry.png.webp";
@@ -35,12 +36,14 @@ const slides = [
 ];
 
 export default function CompanySlider() {
-  const { current, handlers } = useSlider({ length: slides.length });
+  const { current, handlers, setCurrent } = useSlider({
+    length: slides.length,
+  });
 
   return (
     <div
       {...handlers}
-      className="flex justify-center w-full py-[48px] relative overflow-hidden"
+      className="flex flex-col items-center gap-[40px] w-full pt-[48px] pb-[16px] relative overflow-hidden"
     >
       <div
         className="flex transition-transform duration-500 ease-in-out"
@@ -55,6 +58,11 @@ export default function CompanySlider() {
           </div>
         ))}
       </div>
+      <Indicator
+        current={current}
+        length={slides.length}
+        setCurrent={setCurrent}
+      />
     </div>
   );
 }

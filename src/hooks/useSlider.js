@@ -13,5 +13,5 @@ export function useSlider({ length }) {
     trackMouse: true,
   });
 
-  return { current, handlers };
+  return { current, handlers, setCurrent };
 }
