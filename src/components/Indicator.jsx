@@ -6,7 +6,7 @@ export default function Indicator({ current, length, setCurrent }) {
           key={i}
           onClick={() => setCurrent(i)}
           className={`w-[12px] aspect-square rounded-full transition ${
-            current === i ? "bg-black/75" : "bg-black/40"
+            current === i ? "bg-fresh-green" : "bg-black/40"
           }`}
         ></button>
       ))}
