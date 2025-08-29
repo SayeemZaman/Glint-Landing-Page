@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 
-export function useSlider({ length }) {
+export function useSlider({ length, interval = 3000, autoPlay = true }) {
   const [current, setCurrent] = useState(0);
 
   const next = () => setCurrent((prev) => (prev === length - 1 ? 0 : prev + 1));
@@ -12,6 +12,12 @@ export function useSlider({ length }) {
     onSwipedRight: prev,
     trackMouse: true,
   });
+
+  useEffect(() => {
+    if (!autoPlay) return;
+    const timer = setInterval(next, interval);
+    return () => clearInterval(timer);
+  }, [current, interval, autoPlay]);
 
   return { current, handlers, setCurrent };
 }
