@@ -1,4 +1,4 @@
-// import Social from "./Social";
+import Social from "./Social";
 
 const address = [
   {
@@ -40,6 +40,7 @@ export default function Address() {
       {address.map((item, i) => (
         <List key={i} head={item.head} content={item.content} />
       ))}
+      <Social />
     </div>
   );
 }
