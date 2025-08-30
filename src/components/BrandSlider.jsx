@@ -12,7 +12,7 @@ import magento from "../assets/images/magento.png.webp";
 function Logo({ img, alt }) {
   return (
     <img
-      className="w-[96px] opacity-50 hover:opacity-100"
+      className="w-[96px] opacity-50 hover:opacity-100 transition duration-300 ease-in-out"
       src={img}
       alt={alt}
     />
@@ -35,7 +35,7 @@ const slides = [
   <Slide img={joomla} img2={magento} name="Joomla" name2="Magento" />,
 ];
 
-export default function CompanySlider() {
+export default function BrandSlider() {
   const { current, handlers, setCurrent } = useSlider({
     length: slides.length,
   });
