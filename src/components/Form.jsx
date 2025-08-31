@@ -32,10 +32,7 @@ export default function Form() {
         className="pb-[156px]"
         required
       ></textarea>
-      <button
-        type="submit"
-        className="w-full py-[16px] bg-fresh-green font-satoshiBold text-white text-sm mt-[32px]"
-      >
+      <button type="submit" className="submit">
         SUBMIT
       </button>
     </form>

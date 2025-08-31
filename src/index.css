@@ -41,3 +41,9 @@ input,
 textarea {
   @apply w-full bg-transparent outline-none border-b border-med-gray/50 focus:border-fresh-green transition py-[16px] font-satoshiMed text-cloud-gray text-sm;
 }
+.submit {
+  @apply w-full py-[16px] bg-fresh-green font-satoshiBold text-white text-sm mt-[32px];
+}
+.ftext {
+  @apply text-cloud-gray/50 text-left font-satoshiMed leading-relaxed py-[24px];
+}
