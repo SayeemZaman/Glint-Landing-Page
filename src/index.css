@@ -23,6 +23,10 @@
   src: url("/src/assets/fonts/Satoshi-Black.otf");
 }
 
+html,
+body {
+  @apply scroll-smooth;
+}
 section {
   @apply px-[24px] py-[32px];
 }

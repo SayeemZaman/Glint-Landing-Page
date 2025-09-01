@@ -43,7 +43,11 @@ function NavBar({ isOpen, toggleNav }) {
       <ul className="flex flex-col py-[48px] gap-[20px]">
         {data.map((item, i) => (
           <li key={i}>
-            <a href={item.link} className="text-white font-satoshiBold">
+            <a
+              href={item.link}
+              onClick={toggleNav}
+              className="text-white font-satoshiBold"
+            >
               {item.name}
             </a>
           </li>

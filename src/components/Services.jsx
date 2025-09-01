@@ -7,7 +7,10 @@ import devIcon from "../assets/images/code.png";
 
 function ServiceCard({ icon, name, desc }) {
   return (
-    <div className="flex flex-col items-center gap-[16px] py-[32px]">
+    <div
+      id="services"
+      className="flex flex-col items-center gap-[16px] py-[32px]"
+    >
       <img src={icon} alt={`${name} Icon`} className="w-[48px]" />
       <p className="font-satoshiBold text-xl">{name}</p>
       <p className="font-satoshiMed text-med-gray">{desc}</p>

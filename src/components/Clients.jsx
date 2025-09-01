@@ -3,7 +3,10 @@ import ClientSlider from "./ClientSlider";
 
 export default function Clients() {
   return (
-    <section className="bg-light-gray py-[64px] flex flex-col w-full overflow-hidden">
+    <section
+      id="clients"
+      className="bg-light-gray py-[64px] flex flex-col w-full overflow-hidden"
+    >
       <h2 className="text-fresh-green">OUR CLIENTS</h2>
       <h3>Glint has been honored to partner up with these clients</h3>
       <BrandSlider />

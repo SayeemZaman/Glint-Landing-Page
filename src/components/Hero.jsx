@@ -15,7 +15,7 @@ function Btn({ name, target }) {
 
 export default function Hero() {
   return (
-    <section id="home" className="bg-rich-black">
+    <section id="hero" className="bg-rich-black">
       <h1 className="font-satoshiBold text-4xl text-white text-start">
         Glint.
       </h1>
@@ -25,8 +25,8 @@ export default function Hero() {
           We are a creative group of people who design influential brands and
           digital experiences.
         </h3>
-        <Btn name="Start A Project" target="#about" />
-        <Btn name="More About Us" target="#contact" />
+        <Btn name="Start A Project" target="contact" />
+        <Btn name="More About Us" target="about" />
       </div>
     </section>
   );
