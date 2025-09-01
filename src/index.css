@@ -36,10 +36,10 @@ h3 {
   @apply text-center;
 }
 h2 {
-  @apply font-satoshiBold text-base;
+  @apply font-satoshiBold text-base md:text-lg lg:text-xl;
 }
 h3 {
-  @apply font-satoshiBold text-3xl my-[12px];
+  @apply font-satoshiBold text-3xl lg:text-5xl my-[12px];
 }
 input,
 textarea {
