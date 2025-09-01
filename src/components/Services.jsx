@@ -7,13 +7,16 @@ import devIcon from "../assets/images/code.png";
 
 function ServiceCard({ icon, name, desc }) {
   return (
-    <div
-      id="services"
-      className="flex flex-col items-center gap-[16px] py-[32px]"
-    >
-      <img src={icon} alt={`${name} Icon`} className="w-[48px]" />
-      <p className="font-satoshiBold text-xl">{name}</p>
-      <p className="font-satoshiMed text-med-gray">{desc}</p>
+    <div className="flex flex-col lg:relative items-center gap-[16px] py-[32px]">
+      <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:self-start gap-[16px]">
+        <img src={icon} alt={`${name} Icon`} className="w-[48px] lg:w-[64px]" />
+        <p className="font-satoshiBold text-xl md:text-4xl lg:text-left">
+          {name}
+        </p>
+      </div>
+      <p className="font-satoshiMed text-med-gray md:w-[456px] md:text-lg lg:text-left lg:leading-loose">
+        {desc}
+      </p>
     </div>
   );
 }
@@ -29,11 +32,13 @@ const data = [
 
 export default function Services() {
   return (
-    <section className="py-[64px]">
+    <section id="services" className="py-[64px] md:py-[80px] lg:px-[64px]">
       <h2 className="text-fresh-green">WHAT WE DO</h2>
-      <h3>We have got everything you need to launch and grow your business</h3>
-      <hr className="mt-[24px]" />
-      <div>
+      <h3 className="md:text-4xl">
+        We have got everything you need to launch and grow your business
+      </h3>
+      <hr className="mt-[48px] mb-[32px] mx-auto max-w-[50%]" />
+      <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-y-[32px] lg:gap-x-[48px]">
         {data.map((item, index) => (
           <ServiceCard
             key={index}
