@@ -5,10 +5,12 @@ export default function Clients() {
   return (
     <section
       id="clients"
-      className="bg-light-gray py-[64px] flex flex-col w-full overflow-hidden"
+      className="bg-light-gray py-[64px] lg:px-[64px] flex flex-col w-full overflow-hidden"
     >
       <h2 className="text-fresh-green">OUR CLIENTS</h2>
-      <h3>Glint has been honored to partner up with these clients</h3>
+      <h3 className="md:!text-5xl">
+        Glint has been honored to partner up with these clients
+      </h3>
       <BrandSlider />
       <hr className="border-0 h-[1px] bg-black/20 mt-[40px]" />
       <ClientSlider />
