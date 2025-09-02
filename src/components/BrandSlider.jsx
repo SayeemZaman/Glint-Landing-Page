@@ -1,5 +1,6 @@
 import { useSlider } from "../hooks/useSlider";
 import Indicator from "./Indicator";
+import { useState, useEffect } from "react";
 import apple from "../assets/images/apple.png.webp";
 import atom from "../assets/images/atom.png.webp";
 import blackberry from "../assets/images/blackberry.png.webp";
@@ -12,7 +13,7 @@ import magento from "../assets/images/magento.png.webp";
 function Logo({ img, alt }) {
   return (
     <img
-      className="w-[96px] opacity-50 hover:opacity-100 transition duration-300 ease-in-out"
+      className="w-[96px] md:min-w-[156px] lg:min-w-[128px] opacity-50 hover:opacity-100 transition duration-300 ease-in-out"
       src={img}
       alt={alt}
     />
@@ -35,7 +36,7 @@ const slides = [
   <Slide img={joomla} img2={magento} name="Joomla" name2="Magento" />,
 ];
 
-export default function BrandSlider() {
+function MobileSlider() {
   const { current, handlers, setCurrent } = useSlider({
     length: slides.length,
   });
@@ -65,4 +66,40 @@ export default function BrandSlider() {
       />
     </div>
   );
+}
+
+const brands = [
+  <Logo img={apple} alt="Apple" />,
+  <Logo img={atom} alt="Atom" />,
+  <Logo img={blackberry} alt="Blackberry" />,
+  <Logo img={dropbox} alt="Dropbox" />,
+  <Logo img={envato} alt="Envato" />,
+  <Logo img={firefox} alt="Firefox" />,
+  <Logo img={joomla} alt="Joomla" />,
+  <Logo img={magento} alt="Magento" />,
+];
+
+function ScrollBrand() {
+  return (
+    <div className="flex items-center md:!gap-[40px] lg:gap-[24px] px-[96px] lg:px-[48px] pt-[48px] pb-[32px] overflow-x-auto scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent snap-x snap-mandatory">
+      {brands.map((item, i) => (
+        <div key={i} className="snap-start">
+          {item}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function BrandSlider() {
+  const [screenW, setScreenW] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setScreenW(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return <>{screenW > 700 ? <ScrollBrand /> : <MobileSlider />}</>;
 }
