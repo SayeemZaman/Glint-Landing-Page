@@ -3,6 +3,8 @@ import Indicator from "./Indicator";
 import user1 from "../assets/images/user-01.jpg.webp";
 import user2 from "../assets/images/user-05.jpg.webp";
 import user3 from "../assets/images/user-02.jpg.webp";
+import arrowLeft from "../assets/images/arrow-small-left.png";
+import arrowRight from "../assets/images/arrow-small-right.png";
 
 const slides = [
   {
@@ -28,7 +30,7 @@ const slides = [
 function Slide({ txt, img, name, title }) {
   return (
     <div className="flex flex-col items-center w-full flex-shrink-0 object-cover px-[16px]">
-      <p className="font-satoshiMed mb-[48px] max-w-[95dvw] text-charcoal-gray text-lg px-[16px]">
+      <p className="font-satoshiMed mb-[48px] max-w-[95dvw] lg:max-w-[80dvw] text-charcoal-gray text-lg md:text-xl lg:text-3xl lg:text-loose px-[16px]">
         {txt}
       </p>
       <img
@@ -42,8 +44,16 @@ function Slide({ txt, img, name, title }) {
   );
 }
 
+function Arrow({ img, fnc, alt }) {
+  return (
+    <button onClick={fnc} aria-label={alt} className="hidden lg:block">
+      <img src={img} className="w-[32px] min-w-[32px]" />
+    </button>
+  );
+}
+
 export default function ClientSlider() {
-  const { current, handlers, setCurrent } = useSlider({
+  const { current, handlers, setCurrent, prev, next } = useSlider({
     length: slides.length,
   });
 
@@ -52,19 +62,23 @@ export default function ClientSlider() {
       {...handlers}
       className="flex flex-col items-center gap-[32px] pt-[64px] overflow-hidden"
     >
-      <div
-        className="flex flex-row transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${current * 100}%)` }}
-      >
-        {slides.map((item, i) => (
-          <Slide
-            key={i}
-            txt={item.txt}
-            img={item.img}
-            name={item.name}
-            title={item.title}
-          />
-        ))}
+      <div className="flex">
+        <Arrow img={arrowLeft} fnc={prev} alt="Previous" />
+        <div
+          className="flex flex-row transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {slides.map((item, i) => (
+            <Slide
+              key={i}
+              txt={item.txt}
+              img={item.img}
+              name={item.name}
+              title={item.title}
+            />
+          ))}
+        </div>
+        <Arrow img={arrowRight} fnc={next} alt="Next" />
       </div>
       <Indicator
         current={current}

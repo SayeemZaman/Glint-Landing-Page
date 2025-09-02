@@ -19,5 +19,5 @@ export function useSlider({ length, interval = 3000, autoPlay = true }) {
     return () => clearInterval(timer);
   }, [current, interval, autoPlay]);
 
-  return { current, handlers, setCurrent };
+  return { current, handlers, setCurrent, prev, next };
 }
