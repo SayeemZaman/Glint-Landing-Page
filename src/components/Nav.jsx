@@ -15,9 +15,12 @@ function NavBtn({ toggle }) {
   return (
     <button
       onClick={toggle}
-      className="fixed bg-rich-black top-[16px] right-[16px] w-[40px] aspect-square flex justify-center items-center"
+      className="fixed bg-rich-black top-[24px] right-[24px] md:top-[32px] md:right-[32px] h-[40px] aspect-square md:aspect-auto md:px-[8px] md:gap-[12px] flex justify-center items-center"
       aria-label="Open Navigation Menu"
     >
+      <p className="hidden md:block text-fresh-green text-sm font-satoshiBold">
+        MENU
+      </p>
       <img src={menu} className="h-[28px] w-[24px]" />
     </button>
   );
