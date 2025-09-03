@@ -1,9 +1,7 @@
 export default function Form() {
   return (
-    <form className="bg-eerie-black py-[48px] px-[32px]">
-      <h4 className="font-satoshiBold text-lg text-white text-center py-[24px]">
-        SEND US A MESSAGE
-      </h4>
+    <form className="bg-eerie-black py-[48px] px-[32px] md:px-[96px] lg:px-[48px]">
+      <h4>SEND US A MESSAGE</h4>
       <input
         type="text"
         name="name"

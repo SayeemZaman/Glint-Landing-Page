@@ -20,13 +20,15 @@ const address = [
 ];
 
 function Item({ txt }) {
-  return <p className="text-cloud-gray/50 font-satoshiMed">{txt}</p>;
+  return (
+    <p className="text-cloud-gray/50 font-satoshiMed md:text-left">{txt}</p>
+  );
 }
 
 function List({ head, content }) {
   return (
-    <div className="flex flex-col gap-[4px]">
-      <p className="font-satoshiBold text-fresh-green">{head}</p>
+    <div className="flex flex-col gap-[4px] md:px-[96px]">
+      <p className="font-satoshiBold text-fresh-green md:text-left">{head}</p>
       {content.map((item, i) => (
         <Item key={i} txt={item} />
       ))}
@@ -36,7 +38,8 @@ function List({ head, content }) {
 
 export default function Address() {
   return (
-    <div className="bg-eerie-black flex flex-col gap-[32px] pt-[32px] pb-[64px]">
+    <div className="bg-eerie-black flex flex-col gap-[32px] pt-[32px] lg:pt-[48px] pb-[64px]">
+      <h4 className="hidden lg:block !mx-auto">CONTACT INFO</h4>
       {address.map((item, i) => (
         <List key={i} head={item.head} content={item.content} />
       ))}

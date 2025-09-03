@@ -41,6 +41,9 @@ h2 {
 h3 {
   @apply font-satoshiBold text-3xl lg:text-5xl my-[12px];
 }
+h4 {
+  @apply font-satoshiBold text-lg text-white text-center py-[24px] md:text-left;
+}
 input,
 textarea {
   @apply w-full bg-transparent outline-none border-b border-med-gray/50 focus:border-fresh-green transition py-[16px] font-satoshiMed text-cloud-gray text-sm;
